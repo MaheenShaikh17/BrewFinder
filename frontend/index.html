@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BrewFinder | Discover Hyderabad's Best Places</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            <span>☕</span>
+            BrewFinder
+        </a>
+
+        <nav>
+            
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#places">Explore</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+        </nav>
+
+        <button class="location-btn">
+            📍 Hyderabad, Sindh
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-tag">
+                    DISCOVER • EAT • SIP
+                </p>
+
+                <h1>
+                    Discover Hyderabad's
+                    <span>Best Places</span>
+                </h1>
+
+                <p class="hero-description">
+                    Find cafes, coffee shops, restaurants, and great
+                    places to eat in Hyderabad, Sindh.
+                </p>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search cafes, restaurants, or locations..."
+                    >
+
+                    <button id="searchBtn">
+                        Search
+                    </button>
+
+                </div>
+
+
+                <!-- POPULAR SEARCHES -->
+
+                <div class="popular-searches">
+
+                    <span>Popular:</span>
+
+                    <button type="button">Cafe</button>
+                    <button type="button">Restaurant</button>
+                    <button type="button">Coffee</button>
+                    <button type="button">Latifabad</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PLACES ================= -->
+
+        <section id="places" class="places-section">
+
+            <div class="section-heading">
+
+                <p>EXPLORE HYDERABAD</p>
+
+                <h2>Cafes & Restaurants</h2>
+
+                <span>
+                    Discover popular places to eat and drink in Hyderabad.
+                </span>
+
+            </div>
+
+
+            <!-- ================= FILTERS ================= -->
+
+            <div class="filters">
+
+                <div class="filter-buttons">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All Places
+                    </button>
+
+                    <button class="filter-btn" data-filter="Cafe">
+                        Cafes
+                    </button>
+
+                    <button class="filter-btn" data-filter="Restaurant">
+                        Restaurants
+                    </button>
+
+                    <button class="filter-btn" data-filter="Coffee Shop">
+                        Coffee Shops
+                    </button>
+
+                </div>
+
+
+                <div class="filter-selects">
+
+                    <select id="areaFilter">
+
+                        <option value="all">
+                            All Areas
+                        </option>
+
+                        <option value="Latifabad">
+                            Latifabad
+                        </option>
+
+                        <option value="Qasimabad">
+                            Qasimabad
+                        </option>
+
+                        <option value="Auto Bahn Road">
+                            Auto Bahn Road
+                        </option>
+
+                    </select>
+
+
+                    <select id="sortFilter">
+
+                        <option value="default">
+                            Sort By
+                        </option>
+
+                        <option value="rating-high">
+                            Highest Rating
+                        </option>
+
+                        <option value="rating-low">
+                            Lowest Rating
+                        </option>
+
+                        <option value="reviews">
+                            Most Reviewed
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- PLACE CARDS -->
+
+            <div
+                class="place-container"
+                id="placeContainer"
+            ></div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section id="categories" class="categories-section">
+
+            <div class="section-heading">
+
+                <p>FIND YOUR VIBE</p>
+
+                <h2>Explore by Category</h2>
+
+            </div>
+
+
+            <div class="category-container">
+
+                <div class="category-card">
+                    <div>☕</div>
+                    <h3>Cafes</h3>
+                    <p>
+                        Discover coffee shops and cozy cafes.
+                    </p>
+                </div>
+
+
+                <div class="category-card">
+                    <div>🍽️</div>
+                    <h3>Restaurants</h3>
+                    <p>
+                        Explore restaurants and dining places.
+                    </p>
+                </div>
+
+
+                <div class="category-card">
+                    <div>🍰</div>
+                    <h3>Desserts</h3>
+                    <p>
+                        Find delicious desserts and sweet treats.
+                    </p>
+                </div>
+
+
+                <div class="category-card">
+                    <div>☕</div>
+                    <h3>Coffee</h3>
+                    <p>
+                        Find great coffee around Hyderabad.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h2>☕ BrewFinder</h2>
+
+                <p>
+                    Discover cafes and restaurants around
+                    Hyderabad, Sindh.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div>
+
+    <h4>Explore</h4>
+
+    <a href="#home">Home</a>
+    <a href="#places">Places</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+
+</div>
+
+            </div>
+
+
+            <div>
+
+                <h4>Location</h4>
+
+                <p>Hyderabad, Sindh</p>
+                <p>Pakistan</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 BrewFinder | Built with HTML, CSS & JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+<!-- ================= PLACE DETAILS MODAL ================= -->
+
+<div id="placeModal" class="modal">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="close-modal">
+            ×
+        </button>
+
+        <div id="modalDetails">
+
+            <!-- Details will be added by JavaScript -->
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- JavaScript -->
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

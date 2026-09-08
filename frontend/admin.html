@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BrewFinder Admin</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+        <div class="logo">
+            BrewFinder
+            <span>Admin Panel</span>
+        </div>
+        
+
+        <div class="header-buttons">
+
+    <a href="index.html" class="back-btn">
+        ← Website
+    </a>
+
+    <button id="logoutBtn" class="logout-btn">
+        Logout
+    </button>
+
+</div>
+    </header>
+
+
+    <main class="admin-container">
+
+        <div class="page-heading">
+            <h1>Manage Places</h1>
+            <p>Add, update and remove cafes and restaurants.</p>
+        </div>
+
+
+        <!-- Add Place Form -->
+
+        <section class="admin-card">
+
+            <h2>Add New Place</h2>
+
+            <form id="placeForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Place Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter place name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Type</label>
+
+                        <select id="type" required>
+                            <option value="">Select Type</option>
+                            <option value="Cafe">Cafe</option>
+                            <option value="Restaurant">Restaurant</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Category</label>
+
+                        <input
+                            type="text"
+                            id="category"
+                            placeholder="e.g. Coffee, Pakistani, Italian"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Location</label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Enter location"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>City</label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            value="Hyderabad"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Rating</label>
+
+                        <input
+                            type="number"
+                            id="rating"
+                            min="0"
+                            max="5"
+                            step="0.1"
+                            placeholder="4.5"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Reviews</label>
+
+                        <input
+                            type="number"
+                            id="reviews"
+                            min="0"
+                            value="0"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Image Path</label>
+
+                        <input
+                            type="text"
+                            id="image"
+                            placeholder="images/place.jpg"
+                        >
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="add-btn">
+                    + Add Place
+                </button>
+
+            </form>
+
+            <p id="formMessage"></p>
+
+        </section>
+
+
+        <!-- Places Table -->
+
+        <section class="admin-card">
+
+            <div class="table-heading">
+                <h2>All Places</h2>
+
+                <button
+                    id="refreshBtn"
+                    class="refresh-btn"
+                >
+                    Refresh
+                </button>
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Location</th>
+                            <th>Rating</th>
+                            <th>Reviews</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="placesTableBody">
+
+                        <tr>
+                            <td colspan="8">
+                                Loading places...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<!-- Edit Place Modal -->
+
+<div id="editModal" class="edit-modal">
+
+    <div class="edit-modal-content">
+
+        <button id="closeEditModal" class="close-edit">
+            ×
+        </button>
+
+        <h2>Edit Place</h2>
+
+        <form id="editForm">
+
+            <input type="hidden" id="editId">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Place Name</label>
+                    <input type="text" id="editName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Type</label>
+
+                    <select id="editType" required>
+                        <option value="Cafe">Cafe</option>
+                        <option value="Restaurant">Restaurant</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" id="editCategory" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="editLocation" required>
+                </div>
+
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" id="editCity" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <input
+                        type="number"
+                        id="editRating"
+                        min="0"
+                        max="5"
+                        step="0.1"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Reviews</label>
+                    <input
+                        type="number"
+                        id="editReviews"
+                        min="0"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Image Path</label>
+                    <input type="text" id="editImage">
+                </div>
+
+            </div>
+
+            <button type="submit" class="add-btn">
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
